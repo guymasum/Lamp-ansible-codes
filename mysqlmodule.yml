@@ -1,5 +1,5 @@
 ---
-- hosts: client_1
+- hosts: all
   remote_user: root
   tasks:
     - name: 2. Start Mysql Service
