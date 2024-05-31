@@ -52,14 +52,14 @@ spec:<br>
     image_version: latest<br>
     image_pull_policy: Always<br>
     image_pull_secrets:<br>
-     - acr_pull_secret
-    ee_images:
-      - name: awx-ee
-        image: <container-registry-name>.azurecr.io/awx-ee
-    control_plane_ee_image: <container-registry-name>.azurecr.io/awx-ee:latest
-    init_container_image: <container-registry-name>.azurecr.io/awx-ee
-    init_container_image_version: latest
-    init_projects_container_image: <container-registry-name>.azurecr.io/centos:stream9
+     - acr_pull_secret<br>
+    ee_images:<br>
+      - name: awx-ee<br>
+        image: <container-registry-name>.azurecr.io/awx-ee<br>
+    control_plane_ee_image: <container-registry-name>.azurecr.io/awx-ee:latest<br>
+    init_container_image: <container-registry-name>.azurecr.io/awx-ee<br>
+    init_container_image_version: latest<br>
+    init_projects_container_image: <container-registry-name>.azurecr.io/centos:stream9<br>
 
     admin_user: admin
     admin_password_secret: awx-admin-password
