@@ -37,7 +37,7 @@ echo "<encoded-string>" | base64 --decode
 
 
 
-<blockquote>
+
 ```yaml
 --- 
 apiVersion: awx.ansible.com/v1beta1 
@@ -74,4 +74,3 @@ spec:
     web_replicas: 3
     task_replicas: 3
 ```	
-</blockquote>
