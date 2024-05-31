@@ -14,7 +14,7 @@ kubectl create secret docker-registry  \<br>
     --docker-server=<container-registry-name>.azurecr.io \<br>
     --docker-username=<service-principal-ID> \<br>
     --docker-password=<service-principal-password><br>
-<blockquote>
+</blockquote>
 <p>
 Generate and create the awx admin password <br>
 <blockquote>
