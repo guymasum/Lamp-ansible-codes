@@ -39,8 +39,8 @@ echo "<encoded-string>" | base64 --decode
 
 <blockquote>
 
-<rawtext>---</awtext>
-apiVersion: awx.ansible.com/v1beta1
+<rawtext>---</awtext><br>
+apiVersion: awx.ansible.com/v1beta1<br>
 kind: AWX
 metadata:
   name: awx
