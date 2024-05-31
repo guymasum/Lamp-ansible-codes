@@ -19,16 +19,13 @@ kubectl create secret docker-registry  \
     --docker-username=<service-principal-ID> \
     --docker-password=<service-principal-password>
 ```
-<p>
-# ici 
-<p>
 To view the encoded data of the awx admin password,type this command <p>
-```tcsh
-
+```
 kubectl get secret awx-admin-password \
  -o jsonpath='{.data}' -n awx 
-{"password":"NGQ4MmY5NmJjNjIzOWI0MzhlNGQ4MzlhOGUzZjFiMjg4ODI4OTIyOA=="}
 ```
+the output is something similar to: <br>
+{"password":"NGQ4MmY5NmJjNjIzOWI0MzhlNGQ4MzlhOGUzZjFiMjg4ODI4OTIyOA=="}
 To decode the encoded data of the awx admin password,type this command
 ```
 echo "<encoded-string>" | base64 --decode
