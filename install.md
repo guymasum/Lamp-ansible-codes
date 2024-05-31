@@ -7,6 +7,10 @@ Create the tls secret for awx-dev.imf.org
 ```
 kubectl create secret tls awx-secret-tls --cert=tls.crt  --key=tls.key 
 ```
+Generate and create the awx admin password 
+```
+kubectl create secret generic awx-admin-password --from-literal=password=$(openssl rand -hex 15) -n awx
+```
 Create the secret for accessing Azure ACR <p>
 ```
 kubectl create secret docker-registry  \
