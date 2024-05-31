@@ -11,14 +11,6 @@ Generate and create the awx admin password
 ```
 kubectl create secret generic awx-admin-password --from-literal=password=$(openssl rand -hex 15) -n awx
 ```
-Create the secret for accessing Azure ACR <p>
-```
-kubectl create secret docker-registry  \
-    --namespace awx \
-    --docker-server=<container-registry-name>.azurecr.io \
-    --docker-username=<service-principal-ID> \
-    --docker-password=<service-principal-password>
-```
 To view the encoded data of the awx admin password,type this command <p>
 ```
 kubectl get secret awx-admin-password \
@@ -29,6 +21,14 @@ the output is something similar to: <br>
 To decode the encoded data of the awx admin password,type this command
 ```
 echo "<encoded-string>" | base64 --decode
+```
+Create the secret for accessing Azure ACR <p>
+```
+kubectl create secret docker-registry  \
+    --namespace awx \
+    --docker-server=<container-registry-name>.azurecr.io \
+    --docker-username=<service-principal-ID> \
+    --docker-password=<service-principal-password>
 ```
 
 
