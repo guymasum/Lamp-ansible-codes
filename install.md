@@ -26,7 +26,7 @@ kubectl get secret awx-admin-password \
 ```
 the output is something similar to: <br>
 {"password":"NGQ4MmY5NmJjNjIzOWI0MzhlNGQ4MzlhOGUzZjFiMjg4ODI4OTIyOA=="}
-To decode the encoded data of the awx admin password,type this command
+<br>To decode the encoded data of the awx admin password,type this command
 ```
 echo "<encoded-string>" | base64 --decode
 ```
