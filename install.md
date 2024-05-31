@@ -38,6 +38,7 @@ echo "<encoded-string>" | base64 --decode
 
 
 <blockquote>
+<rawtext>
 ---
 apiVersion: awx.ansible.com/v1beta1
 kind: AWX
@@ -72,4 +73,5 @@ spec:
 
     web_replicas: 3
     task_replicas: 3
+</rawtext>	
 </blockquote>
