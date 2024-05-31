@@ -45,9 +45,9 @@ kind: AWX
 metadata:
   name: awx
 spec:
-  <rawtext>#</rawtext>These parameters are designed for use with:<br>
-  <rawtext>#</rawtext> - AWX Operator: 2.17.0<br> 
-  <rawtext>#</rawtext>  https://github.com/ansible/awx-operator/blob/2.17.0/README.md<br> 
+  # These parameters are designed for use with:<br>
+  # - AWX Operator: 2.17.0<br> 
+  #  https://github.com/ansible/awx-operator/blob/2.17.0/README.md<br> 
     image: <container-registry-name>.azurecr.io/awx<br>
     image_version: latest<br>
     image_pull_policy: Always<br>
