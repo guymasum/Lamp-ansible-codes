@@ -9,21 +9,21 @@ kubectl create secret tls awx-secret-tls --cert=tls.crt  --key=tls.key
 ```
 Create the secret for accessing Azure ACR <p>
 ```
-kubectl create secret docker-registry  \<br>
-    --namespace awx \<br>
-    --docker-server=<container-registry-name>.azurecr.io \<br>
-    --docker-username=<service-principal-ID> \<br>
-    --docker-password=<service-principal-password><br>
+kubectl create secret docker-registry  \
+    --namespace awx \
+    --docker-server=<container-registry-name>.azurecr.io \
+    --docker-username=<service-principal-ID> \
+    --docker-password=<service-principal-password>
 ```
 <p>
-Generate and create the awx admin password <br>
+Generate and create the awx admin password 
 ```
 kubectl create secret generic awx-admin-password --from-literal=password=$(openssl rand -hex 5) -n awx
 ```
 <p>
 To view the encoded data of the awx admin password,type this command
 ```
-kubectl get secret awx-admin-password1 -o jsonpath='{.data}' -n awx <br>
+kubectl get secret awx-admin-password1 -o jsonpath='{.data}' -n awx 
 {"password":"NGQ4MmY5NmJjNjIzOWI0MzhlNGQ4MzlhOGUzZjFiMjg4ODI4OTIyOA=="}
 ```
 To decode the encoded data of the awx admin password,type this command
@@ -45,21 +45,21 @@ kind: AWX
 metadata:
   name: awx
 spec:
-  # These parameters are designed for use with:<br>
-  # - AWX Operator: 2.17.0<br> 
-  #  https://github.com/ansible/awx-operator/blob/2.17.0/README.md<br> 
-    image: <container-registry-name>.azurecr.io/awx<br>
-    image_version: latest<br>
-    image_pull_policy: Always<br>
-    image_pull_secrets:<br>
-     - acr_pull_secret<br>
-    ee_images:<br>
-      - name: awx-ee<br>
-        image: <container-registry-name>.azurecr.io/awx-ee<br>
-    control_plane_ee_image: <container-registry-name>.azurecr.io/awx-ee:latest<br>
-    init_container_image: <container-registry-name>.azurecr.io/awx-ee<br>
-    init_container_image_version: latest<br>
-    init_projects_container_image: <container-registry-name>.azurecr.io/centos:stream9<br>
+  # These parameters are designed for use with:
+  # - AWX Operator: 2.17.0 
+  #  https://github.com/ansible/awx-operator/blob/2.17.0/README.md 
+    image: <container-registry-name>.azurecr.io/awx
+    image_version: latest
+    image_pull_policy: Always
+    image_pull_secrets:
+     - acr_pull_secret
+    ee_images:
+      - name: awx-ee
+        image: <container-registry-name>.azurecr.io/awx-ee
+    control_plane_ee_image: <container-registry-name>.azurecr.io/awx-ee:latest
+    init_container_image: <container-registry-name>.azurecr.io/awx-ee
+    init_container_image_version: latest
+    init_projects_container_image: <container-registry-name>.azurecr.io/centos:stream9
 
     admin_user: admin
     admin_password_secret: awx-admin-password
