@@ -16,10 +16,8 @@ To view the encoded data of the awx admin password,type this command <p>
 kubectl get secret awx-admin-password \
  -o jsonpath='{.data}' -n awx 
 ```
-<p>To decode the encoded data of the awx admin password,type this command
-```
+<p>To decode the encoded data of the awx admin password,type this command<br>
 <pre>echo "<encoded-string>"| base64 --decode</pre>
-```
 Create the secret for accessing Azure ACR <p>
 ```
 kubectl create secret docker-registry  \
