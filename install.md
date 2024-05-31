@@ -16,16 +16,7 @@ kubectl create secret docker-registry  \
     --docker-password=<service-principal-password>
 ```
 <p>
-Generate and create the awx admin password <p>
-```
-kubectl create secret docker-registry  \
-    --namespace awx \
-    --docker-server=<container-registry-name>.azurecr.io \
-    --docker-username=<service-principal-ID> \
-    --docker-password=<service-principal-password>
-```
-kubectl create secret generic awx-admin-password --from-literal=password=$(openssl rand -hex 15) -n awx
-```
+# ici 
 <p>
 To view the encoded data of the awx admin password,type this command <p>
 ```tcsh
