@@ -7,13 +7,13 @@ Create the tls secret for awx-dev.imf.org
 <blockquote>
 kubectl create secret tls awx-secret-tls --cert=tls.crt  --key=tls.key 
 </blockquote>
-Create the secret for accessing Azure ACR <br>
+Create the secret for accessing Azure ACR <p>
 <blockquote>
-kubectl create secret docker-registry  \
-    --namespace awx \
-    --docker-server=<container-registry-name>.azurecr.io \
-    --docker-username=<service-principal-ID> \
-    --docker-password=<service-principal-password>
+kubectl create secret docker-registry  \<br>
+    --namespace awx \<br>
+    --docker-server=<container-registry-name>.azurecr.io \<br>
+    --docker-username=<service-principal-ID> \<br>
+    --docker-password=<service-principal-password><br>
 <blockquote>
 Generate and create the awx admin password 
 <blockquote>
