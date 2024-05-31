@@ -26,6 +26,14 @@ Create the secret for accessing Azure ACR
     --docker-username=<service-principal-ID> \
     --docker-password=<service-principal-password>
 ```
+Create the secret for accessing Azure ACR
+```
+ kubectl create secret docker-registry  \
+    --namespace awx \
+    --docker-server=<container-registry-name>.azurecr.io \
+    --docker-username=<service-principal-ID> \
+    --docker-password=<service-principal-password>
+```
 
 
 
