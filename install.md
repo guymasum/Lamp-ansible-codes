@@ -16,7 +16,7 @@ kubectl create secret docker-registry  \
     --docker-password=<service-principal-password>
 ```
 <p>
-Generate and create the awx admin password 
+Generate and create the awx admin password <br>
 ```
 kubectl create secret generic awx-admin-password --from-literal=password=$(openssl rand -hex 5) -n awx
 ```
