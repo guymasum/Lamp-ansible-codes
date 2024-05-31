@@ -4,32 +4,32 @@ copy tls.crt and tls.key from to
 openssl req -x509 -nodes -days 3650 -newkey rsa:2048 -out tls.crt -keyout tls.key -subj "/CN=${AWX_HOST}/O=${AWX_HOST}" -addext "subjectAltName = DNS:${AWX_HOST}"
 ```
 Create the tls secret for awx-dev.imf.org
-<blockquote>
+```
 kubectl create secret tls awx-secret-tls --cert=tls.crt  --key=tls.key 
-</blockquote>
+```
 Create the secret for accessing Azure ACR <p>
-<blockquote>
+```
 kubectl create secret docker-registry  \<br>
     --namespace awx \<br>
     --docker-server=<container-registry-name>.azurecr.io \<br>
     --docker-username=<service-principal-ID> \<br>
     --docker-password=<service-principal-password><br>
-</blockquote>
+```
 <p>
 Generate and create the awx admin password <br>
-<blockquote>
+```
 kubectl create secret generic awx-admin-password --from-literal=password=$(openssl rand -hex 5) -n awx
-</blockquote>
+```
 <p>
 To view the encoded data of the awx admin password,type this command
-<blockquote>
+```
 kubectl get secret awx-admin-password1 -o jsonpath='{.data}' -n awx <br>
 {"password":"NGQ4MmY5NmJjNjIzOWI0MzhlNGQ4MzlhOGUzZjFiMjg4ODI4OTIyOA=="}
-</blockquote>
+```
 To decode the encoded data of the awx admin password,type this command
-<blockquote>
+```
 echo "<encoded-string>" | base64 --decode
-</blockquote>
+```
 
 
 
