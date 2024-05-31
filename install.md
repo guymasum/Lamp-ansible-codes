@@ -41,17 +41,17 @@ echo "<encoded-string>" | base64 --decode
 
 <rawtext>---</awtext><br>
 apiVersion: awx.ansible.com/v1beta1<br>
-kind: AWX
-metadata:
-  name: awx
-spec:
-  <rawtext>#</rawtext>These parameters are designed for use with:
-  <rawtext>#</rawtext> - AWX Operator: 2.17.0 
-  <rawtext>#</rawtext>  https://github.com/ansible/awx-operator/blob/2.17.0/README.md 
-    image: <container-registry-name>.azurecr.io/awx
-    image_version: latest
-    image_pull_policy: Always
-    image_pull_secrets:
+kind: AWX<br>
+metadata:<br>
+  name: awx<br>
+spec:<br>
+  <rawtext>#</rawtext>These parameters are designed for use with:<br>
+  <rawtext>#</rawtext> - AWX Operator: 2.17.0<br> 
+  <rawtext>#</rawtext>  https://github.com/ansible/awx-operator/blob/2.17.0/README.md<br> 
+    image: <container-registry-name>.azurecr.io/awx<br>
+    image_version: latest<br>
+    image_pull_policy: Always<br>
+    image_pull_secrets:<br>
      - acr_pull_secret
     ee_images:
       - name: awx-ee
