@@ -18,7 +18,7 @@ kubectl get secret awx-admin-password \
 ```
 <p>To decode the encoded data of the awx admin password,type this command
 ```
-echo "<encoded-string>" | base64 --decode
+<pre>echo </rawtext><encoded-string><rawtext>"</rawtext> | base64 --decode</pre>
 ```
 Create the secret for accessing Azure ACR <p>
 ```
