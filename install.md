@@ -38,14 +38,14 @@ echo "<encoded-string>" | base64 --decode
 
 
 <blockquote>
-<rawtext>
----
+
+<rawtext>---</awtext>
 apiVersion: awx.ansible.com/v1beta1
 kind: AWX
 metadata:
   name: awx
 spec:
-  # These parameters are designed for use with:
+  <rawtext># These parameters are designed for use with:</rawtext>
   # - AWX Operator: 2.17.0
   #   https://github.com/ansible/awx-operator/blob/2.17.0/README.md
     image: <container-registry-name>.azurecr.io/awx
@@ -72,6 +72,5 @@ spec:
     postgres_configuration_secret: awx-postgres-configuration
 
     web_replicas: 3
-    task_replicas: 3
-</rawtext>	
+    task_replicas: 3	
 </blockquote>
